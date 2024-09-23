@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akwadran <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:05:15 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/20 21:49:34 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/09/23 23:37:50 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-#include <bsd/string.h>
 #include <strings.h>
 #include <stdlib.h>
 #include "libft.h"

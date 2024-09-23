@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_string2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akwadran <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 22:22:32 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/20 20:31:30 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/09/23 23:38:34 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//#include <librerias>
 
 #include <stdio.h> //quitar
 #include "libft.h"
@@ -50,6 +48,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (ft_strlen(dst));
 }
 */
+
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s)

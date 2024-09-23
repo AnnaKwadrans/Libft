@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stdlib.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akwadran <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 22:32:15 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/20 20:32:53 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/09/23 23:32:25 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int		ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int	i;
 	int	sign;
@@ -49,6 +49,7 @@ int		ft_atoi(const char *nptr)
 	num = num * sign;
 	return (num);
 }
+/*
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	size_t	i;
@@ -67,3 +68,4 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	return (ptr);
 }
+*/

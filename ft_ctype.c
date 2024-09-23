@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ctype.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akwadran <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 20:56:26 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/20 20:39:37 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/09/23 23:37:59 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <librerias>
 #include "libft.h"
 
 int	ft_isalpha(int c)

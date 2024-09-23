@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_string.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akwadran <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 20:40:21 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/21 19:21:15 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/09/23 23:37:36 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <librerias>
-#include <aio.h>
 #include <stdlib.h>
 #include "libft.h"
 
@@ -54,7 +52,7 @@ void	ft_bzero(void *s, size_t n)
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char							*dest_ptr;
+	unsigned char		*dest_ptr;
 	const unsigned char	*src_ptr;
 
 	dest_ptr = dest;
@@ -73,7 +71,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*dest_ptr;
+	unsigned char		*dest_ptr;
 	const unsigned char	*src_ptr;
 
 	if (dest == 0 && src == 0)

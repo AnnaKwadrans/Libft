@@ -6,7 +6,7 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 20:56:26 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/23 06:17:32 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/09/23 23:33:37 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putchar_fd(char c, int fd)
 	write(fd, &c, 1);
 }
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	while (*s)
 	{
@@ -27,7 +27,7 @@ void ft_putstr_fd(char *s, int fd)
 	}
 }
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	while (*s)
 	{
@@ -37,9 +37,8 @@ void ft_putendl_fd(char *s, int fd)
 	write(fd, "\n", 1);
 }
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	
 	if (n == -2147483648)
 		write(fd, "-2147483648", 11);
 	else if (n < 0)
@@ -54,8 +53,8 @@ void ft_putnbr_fd(int n, int fd)
 	}
 	if (n < 10)
 		ft_putchar_fd((n + '0'), 1);
-}	
-
+}
+/*
 int	main(void)
 {
 	char	string[] = "hola mundo";
@@ -66,3 +65,4 @@ int	main(void)
 	ft_putnbr_fd(-9876, 1);
 	return (0);
 }
+*/
