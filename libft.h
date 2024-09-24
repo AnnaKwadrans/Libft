@@ -22,6 +22,7 @@ int		ft_isprint(int c); //OK
 
 int		ft_toupper(int c); //OK
 int		ft_tolower(int c); //OK
+int     ft_isspace(int c);
 
 size_t	ft_strlen(const char *s); //OK
 void	*ft_memset(void *s, int c, size_t n); //OK
@@ -40,6 +41,7 @@ void	*ft_memchr(const void *s, int c, size_t n); //OK
 //char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strdup(const char *s); //OK
 
+int     whitespace_sign(const char *nptr, int *sign);
 int		ft_atoi(const char *nptr); //OK
 //void	*ft_calloc(size_t nmemb, size_t size);
 

@@ -6,7 +6,7 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 22:25:00 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/23 23:19:34 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/09/24 14:31:38 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,11 @@ int	ft_tolower(int c)
 	if (c >= 'A' && c <= 'Z')
 		c += 32;
 	return (c);
+}
+
+int	ft_isspace(int c)
+{
+	if (c == ' ' || (c >= '\t' && c <= '\r'))
+		return (1);
+	return (0);
 }
