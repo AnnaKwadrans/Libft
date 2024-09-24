@@ -6,14 +6,14 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 22:32:15 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/24 23:37:45 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/09/24 23:47:09 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int	whitespace_sign(const char *nptr, int *sign)
+int	ft_atoi_aux(const char *nptr, int *sign)
 {
 	int	i;
 
@@ -44,7 +44,7 @@ int	ft_atoi(const char *nptr)
 
 	sign = 1;
 	num = 0;
-	i = whitespace_sign(nptr, &sign);
+	i = ft_atoi_aux(nptr, &sign);
 	if (i == -1)
 		return (0);
 	while (ft_isdigit(nptr[i]))
