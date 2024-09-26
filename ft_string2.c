@@ -28,26 +28,32 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (ft_strlen(src));
 }
-/*
+/*appends string src to the end of string dst;
+size must be the size of the dst buffer;
+returns the size of the created string*/
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	len;
+	size_t	i;
+	size_t	j;
 
+	len = ft_strlen(dst) + ft_strlen(src);
+	if (size <= ft_strlen(dst))
+		return (size + ft_strlen(src));
 	i = 0;
 	j = 0;
-	while (dst[i])
+	while (dst[i] && i < (size - 1))
 		i++;
-	while (src[j] && j < (size - 1))
+	while (src[j] && i < (size - 1))
 	{
 		dst[i] = src[j];
 		i++;
 		j++;
 	}
 	dst[i] = '\0';
-	return (ft_strlen(dst));
+	return (len);
 }
-*/
+
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -77,18 +83,23 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
-/*
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
+	if (n == 0)
+		return (0);
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 	i = 0;
-	while (s1[i] && s2[i] && i < n)
+	while (str1[i] && str2[i] && i < (n - 1))
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return (str1[i] - str2[i]);
 }
-*/

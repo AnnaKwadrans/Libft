@@ -3,19 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: akwadran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:05:15 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/23 23:37:50 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/09/20 21:49:34 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+#include <bsd/string.h>
 #include <strings.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "libft.h"
+
+void	ft_print_result(int n)
+	{
+		char c;
+
+		if (n >= 10)
+			ft_print_result(n / 10);
+		c = n % 10 + '0';
+		write (1, &c, 1);
+	}
 
 int	main(void)
 {
@@ -136,20 +148,69 @@ int	main(void)
 	j = ft_strlcpy(str3, str, 7);
 	printf("strlcpy: %s %d\nft_strlcpy: %s %d\n\n", str2, i, str3, j);
 */
-/*
+
 	// strlcat
 
-	char string0[] = "add";
+	//char string0[14] = "add";
 	//char string1[] = "original";
-	char string2[] = "original";
+	//char string2 = "original";
 	//unsigned int i;
-	unsigned int j;
+	//unsigned int j;
 
 	//i = strlcat(string1, string0, sizeof(string1));
-	j = ft_strlcat(string2, string0, sizeof(string2));
+	//j = ft_strlcat(string2, string0, sizeof(string2));
 
-	printf("ft_strlcat: %s %d\n\n", string2, j);
+	//printf("ft_strlcat: %s %d\n\n", string2, j);
+
+	
+/*
+	char	*dest;
+	
+	if (!(dest = (char *)malloc(sizeof(*dest) * 15)))
+		return (0);
+	memset(dest, 0, 15);
+	memset(dest, 'r', 6);
+	dest[10] = 'a';
+	ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 0));
+	write(1, "\n", 1);
+	write(1, dest, 15);
+	free(dest);
 */
+
+	// strncmp
+
+	char	*str1;
+	char	*str2;
+
+	str1 = ft_strdup("abcdef");
+	str2 = ft_strdup("abcdef");
+	printf("ft_strncmp: %d, strncmp: %d\n", ft_strncmp(str1, str2, 6), strncmp(str1, str2, 6));
+	printf("ft_strncmp: %d, strncmp: %d\n", ft_strncmp(str1, str2, 8), strncmp(str1, str2, 8));
+	free(str1);
+	free(str2);
+	
+	str1 = ft_strdup("abcdef");
+	str2 = ft_strdup("abcdeF");
+	printf("ft_strncmp: %d, strncmp: %d\n", ft_strncmp(str1, str2, 6), strncmp(str1, str2, 6));
+	printf("ft_strncmp: %d, strncmp: %d\n", ft_strncmp(str1, str2, 8), strncmp(str1, str2, 8));
+	free(str1);
+	free(str2);
+
+	str1 = ft_strdup("abcdef");
+	str2 = ft_strdup("abcdeF");
+	printf("ft_strncmp: %d, strncmp: %d\n", ft_strncmp(str1, str2, 0), strncmp(str1, str2, 0));
+	printf("ft_strncmp: %d, strncmp: %d\n", ft_strncmp(str1, str2, 0), strncmp(str1, str2, 0));
+	free(str1);
+	free(str2);
+
+	printf("ft_strncmp: %d, strncmp: %d\n", ft_strncmp("abcdefgh", "abcdwxyz", 4), strncmp("abcdefgh", "abcdwxyz", 4));
+	printf("ft_strncmp: %d, strncmp: %d\n", ft_strncmp("test\200", "test\0", 6), strncmp("test\200", "test\0", 6));
+
+
+	
+	
+
+
 /*
 	// strchr
 
@@ -218,8 +279,11 @@ int	main(void)
 */
 
 	// calloc
+/*
+	int	array = {0,1,2,3,4,5};
 
-	
 
+	ft_calloc(6, sizeof(int));
+*/
 	return (0);
 }
