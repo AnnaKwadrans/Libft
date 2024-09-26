@@ -6,7 +6,7 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 22:29:04 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/23 23:38:50 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/09/27 00:12:52 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	ptr1 = (unsigned char *)s1;
 	ptr2 = (unsigned char *)s2;
-	while (i > (n - 1))
+	while (i < n)
 	{
 		if (ptr1[i] != ptr2[i])
 			return ((ptr1[i] - ptr2[i]));
 		i++;
 	}
-	return ((ptr1[i] - ptr2[i]));
+	return (0);
 	
 }
 //char	*ft_strnstr(const char *big, const char *little, size_t len);
