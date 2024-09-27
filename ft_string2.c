@@ -6,7 +6,7 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 22:22:32 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/24 22:57:13 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/09/27 22:20:39 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (ft_strlen(src));
 }
+
 /*appends string src to the end of string dst;
 size must be the size of the dst buffer;
 returns the size of the created string*/
@@ -53,7 +54,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (len);
 }
-
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -86,7 +86,7 @@ char	*ft_strrchr(const char *s, int c)
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*str1;
 	unsigned char	*str2;
 

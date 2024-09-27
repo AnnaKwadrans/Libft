@@ -6,7 +6,7 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 22:29:04 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/27 00:12:52 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/09/27 22:43:08 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (0);
 }
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*ptr1;
 	unsigned char	*ptr2;
@@ -49,9 +49,32 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 		i++;
 	}
 	return (0);
-	
 }
-//char	*ft_strnstr(const char *big, const char *little, size_t len);
+
+char	*ft_strnstr(const char *big, const char *little, size_t len)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	if (*little == '\0' || little == big)
+		return ((char *)big);
+	if (len <= 0)
+		return (0);
+	while (big[i] && i < len)
+	{
+		while (big[i + j] && big[i + j] == little[j] && (i + j) < len)
+		{
+			if (little[j + 1] == '\0')
+				return ((char *)&big[i]);
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+	return (NULL);
+}
 
 char	*ft_strdup(const char *s)
 {

@@ -6,7 +6,7 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 22:32:15 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/26 23:57:21 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/09/27 23:53:53 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_atoi(const char *nptr)
 {
 	int	num;
 	int	sign;
-	
+
 	num = 0;
 	sign = 1;
 	while (ft_isspace(*nptr))
@@ -38,23 +38,14 @@ int	ft_atoi(const char *nptr)
 	}
 	return (num * sign);
 }
-/*
+
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
-	unsigned char	*ptr;
+	void	*ptr;
 	
-	i = 0;
-	while (i < nmemb)
-	{
-		ptr = malloc(size);
-		ptr = ptr + size;
-	}
+	ptr = malloc(nmemb * size);
 	if (ptr == NULL)
-	{
-		free(ptr);
-		return (0);
-	}
+		return (ptr);
+	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
-*/

@@ -6,7 +6,7 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:05:15 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/27 00:25:02 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/09/27 22:45:12 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,7 +177,7 @@ int	main(void)
 */
 
 	// strncmp
-
+/*
 	char	*str1;
 	char	*str2;
 
@@ -205,7 +205,7 @@ int	main(void)
 	printf("ft_strncmp: %d, strncmp: %d\n", ft_strncmp("abcdefgh", "abcdwxyz", 4), strncmp("abcdefgh", "abcdwxyz", 4));
 	printf("ft_strncmp: %d, strncmp: %d\n", ft_strncmp("test\200", "test\0", 6), strncmp("test\200", "test\0", 6));
 
-
+*/
 	
 	
 
@@ -255,9 +255,40 @@ int	main(void)
 	int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
     printf("%s\n", (char *)ft_memchr(tab, -1, 7));
 */
-/*	
+	
 	// ft_string3.c
 
+	
+	
+	
+	// strnstr
+
+	char	big[] = "";
+	char	little[] = "czy";
+	
+	printf("%s\n", ft_strnstr(big, little, 0));
+
+	char	str[] = "lelololelo";
+
+	printf("%s\n", ft_strnstr(str, str, 10));
+
+	printf("strnstr: %s ; ft_strnstr: %s\n", strnstr("abc", "abcdef", 3), ft_strnstr("abc", "abcdef", 3));
+	
+	char haystack[30] = "aaabcabcd";
+	char needle[10] = "aabc";
+	printf("libft tester\n");
+	/* 2 */ printf("%s\n", ft_strnstr(haystack, needle, -1));
+	/* 2 */ printf("%s\n", strnstr(haystack, needle, -1));
+	/* 10 */ printf("%s\n", ft_strnstr(haystack, "abcd", 9));
+	/* 10 */ printf("%s\n", strnstr(haystack, "abcd", 9));
+	
+
+	
+
+	
+	
+	// strdup
+/*	
 	char *ptr;
 	ptr = ft_strdup(teststring);
 	printf("%s\n", ptr);
