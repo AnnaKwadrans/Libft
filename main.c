@@ -6,7 +6,7 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:05:15 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/27 22:45:12 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/09/28 11:01:55 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -262,7 +262,7 @@ int	main(void)
 	
 	
 	// strnstr
-
+/*
 	char	big[] = "";
 	char	little[] = "czy";
 	
@@ -277,11 +277,12 @@ int	main(void)
 	char haystack[30] = "aaabcabcd";
 	char needle[10] = "aabc";
 	printf("libft tester\n");
-	/* 2 */ printf("%s\n", ft_strnstr(haystack, needle, -1));
-	/* 2 */ printf("%s\n", strnstr(haystack, needle, -1));
-	/* 10 */ printf("%s\n", ft_strnstr(haystack, "abcd", 9));
-	/* 10 */ printf("%s\n", strnstr(haystack, "abcd", 9));
-	
+	 printf("%s\n", ft_strnstr(haystack, needle, -1));
+	 printf("%s\n", strnstr(haystack, needle, -1));
+	 printf("%s\n", ft_strnstr(haystack, "abcd", 9));
+	 printf("%s\n", strnstr(haystack, "abcd", 9));
+
+*/	
 
 	
 
@@ -309,11 +310,57 @@ int	main(void)
 */
 
 	// calloc
-/*
-	int	array = {0,1,2,3,4,5};
+
+/*	
+	int	*array;
+	int	i;
+
+	array = ft_calloc(6, sizeof(int));
+	if (array == NULL)
+		printf("Memory err\n");
+	i = 0;
+	while (i < 6)
+	{
+		printf("%d ", array[i]);
+		i++;
+	}
+	free(array);
+
+	*/
 
 
-	ft_calloc(6, sizeof(int));
-*/
+	// substr
+	char	*substr;
+	char	str[] = "szukamy tutaj substringa czy go znajdziemy?";
+	
+	substr = ft_substr(str, 14, 10);
+	 printf("%s\n", substr);
+	free(substr);
+	
+	substr = ft_substr(str, 14, 0);
+	printf("%s\n", substr);
+	free(substr);
+
+	char	str1[] = "";
+	substr = ft_substr(str1, 14, 10);
+	printf("%s\n", substr);
+	free(substr);
+
+	substr = ft_substr(str1, 0, 0);
+	printf("%s\n", substr);
+	free(substr);
+
+	char	str2[] = "szukamy tutaj substring";
+	substr = ft_substr(str2, 15, 10);
+	printf("%s\n", substr);
+	free(substr);
+
+	substr = ft_substr(str2, 30, 10);
+	printf("%s\n", substr);
+	free(substr);
+
+	
+
+
 	return (0);
 }

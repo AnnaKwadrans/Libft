@@ -6,7 +6,7 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 20:56:26 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/24 23:00:01 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/09/28 08:17:24 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,26 +40,28 @@ void	ft_putendl_fd(char *s, int fd)
 /*
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n < 0)
+	if (n >= -2147483648 && n <= 2147483647)
 	{
-		write(fd, "-", 1);
-		if (n == -2147483648)
+		if (n < 0)
 		{
-			write(fd, "2", 1);
-			n = -147483648;
+			write(fd, "-", 1);
+			if (n == -2147483648)
+			{
+				write(fd, "2", 1);
+				n = -147483648;
+			}
+			n = -n;
 		}
-		n = -n;
+		if (n >= 10)
+		{
+			ft_putnbr_fd((n / 10), 1);
+			ft_putchar_fd(((n % 10) + '0'), 1);
+		}
+		if (n < 10)
+			ft_putchar_fd((n + '0'), 1);
 	}
-	if (n >= 10)
-	{
-		ft_putnbr_fd((n / 10), 1);
-		ft_putchar_fd(((n % 10) + '0'), 1);
-	}
-	if (n < 10)
-		ft_putchar_fd((n + '0'), 1);
 }
 */
-
 /*
 int	main(void)
 {

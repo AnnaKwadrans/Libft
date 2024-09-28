@@ -6,8 +6,8 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 20:45:45 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/23 23:20:45 by akwadran         ###   ########.fr       */
-/*                                                                           */
+/*   Updated: 2024/09/28 12:13:21 by akwadran         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
@@ -44,7 +44,7 @@ char	*ft_strdup(const char *s); //OK
 int		ft_atoi(const char *nptr); //OK
 void	*ft_calloc(size_t nmemb, size_t size); //OK
 
-//char	*ft_substr(char const *s, unsigned int start, size_t len); // corregir
+char	*ft_substr(char const *s, unsigned int start, size_t len); //OK
 //char	*ft_strjoin(char const *s1, char const *s2); // corregir
 //char	*ft_strtrim(char const *s1, char const *set);
 //char	**ft_split(char const *s, char c);
