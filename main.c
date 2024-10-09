@@ -6,7 +6,7 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:05:15 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/28 11:01:55 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/10/08 07:16:14 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -330,6 +330,7 @@ int	main(void)
 
 
 	// substr
+	/*
 	char	*substr;
 	char	str[] = "szukamy tutaj substringa czy go znajdziemy?";
 	
@@ -358,9 +359,33 @@ int	main(void)
 	substr = ft_substr(str2, 30, 10);
 	printf("%s\n", substr);
 	free(substr);
+*/
 
+	// strjoin
+/*
+	char	*str1 = NULL;
+	char	str2[] = "";
+	char	*ptr;
 	
+	ptr = ft_strjoin(str1, str2);
+	printf("%s\n", ptr);
+	free(ptr);
+*/
 
+	// strtrim
+
+	char	a[] = "  \n\n  \t\n \n\n\n abdcef  \n\n\t\t  \n \n\n\n ";
+	char	set[] = " \n\t";
+	char	*trimmed;
+	
+	trimmed = ft_strtrim(a, set);
+	printf("%s", trimmed);
+	free(trimmed);
+
+	char	*test;
+	test = ft_strtrim("     ", " ");
+	printf("%s", test);
+	free(test);
 
 	return (0);
 }
