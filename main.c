@@ -374,18 +374,46 @@ int	main(void)
 
 	// strtrim
 
-	char	a[] = "  \n\n  \t\n \n\n\n abdcef  \n\n\t\t  \n \n\n\n ";
-	char	set[] = " \n\t";
+	/*
 	char	*trimmed;
 	
-	trimmed = ft_strtrim(a, set);
-	printf("%s", trimmed);
+	trimmed = ft_strtrim("  \n\n  \t\n \n\n\n abdcef  \n\n\t\t  \n \n\n\n ", " \n\t");
+	printf("%s\n", trimmed);
 	free(trimmed);
 
-	char	*test;
-	test = ft_strtrim("     ", " ");
-	printf("%s", test);
-	free(test);
+	trimmed = ft_strtrim("     ", " ");
+	printf("%s\n", trimmed);
+	free(trimmed);
 
+	trimmed = ft_strtrim(NULL, " \n");
+	printf("%s\n", trimmed);
+	free(trimmed);
+
+	trimmed = ft_strtrim("abcdba", "acb");
+	printf("%s\n", trimmed);
+	free(trimmed);
+*/
+
+	// itoa
+/*
+	char	*num;
+	num = ft_itoa(-321);
+	printf("%s\n", num);
+	free(num);
+*/
+
+	// split
+
+	char	**array;
+	int		i;
+
+	array = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
+	i = 0;
+	while (array[i] != NULL)
+	{
+		printf("%s\n", array[i]);
+		i++;
+	}
+	free(array);
 	return (0);
 }

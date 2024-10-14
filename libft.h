@@ -6,7 +6,7 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 20:45:45 by akwadran          #+#    #+#             */
-/*   Updated: 2024/10/09 08:45:15 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/10/12 15:34:12 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ void	*ft_calloc(size_t nmemb, size_t size); //OK
 
 char	*ft_substr(char const *s, unsigned int start, size_t len); //OK
 char	*ft_strjoin(char const *s1, char const *s2); //OK
-char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strtrim(char const *s1, char const *set); //OK
 
-//char	**ft_split(char const *s, char c);
-//char	*ft_itoa(int n);
-//char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-//void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+char	**ft_split(char const *s, char c); // corregir
+char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char)); //OK
+void	ft_striteri(char *s, void (*f)(unsigned int, char*)); //OK
 
 void	ft_putchar_fd(char c, int fd); //OK
 void	ft_putstr_fd(char *s, int fd); //OK
