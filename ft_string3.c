@@ -6,12 +6,11 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 22:29:04 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/27 22:43:08 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/10/14 21:27:13 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h> //quitar
 #include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)

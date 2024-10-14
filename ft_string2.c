@@ -6,11 +6,10 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 22:22:32 by akwadran          #+#    #+#             */
-/*   Updated: 2024/09/27 22:20:39 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/10/14 21:27:05 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h> //quitar 
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)

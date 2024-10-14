@@ -6,12 +6,11 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 15:26:22 by akwadran          #+#    #+#             */
-/*   Updated: 2024/10/14 21:21:48 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/10/14 21:26:14 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	split_strlen(char c, char const *s)
 {

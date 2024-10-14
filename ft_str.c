@@ -6,12 +6,11 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 22:29:12 by akwadran          #+#    #+#             */
-/*   Updated: 2024/10/14 21:18:20 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/10/14 21:25:48 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -92,16 +91,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(ptr, s1 + i, j - i + 2);
 	return (ptr);
 }
-
-/*
-int main(void)
-{
-    char    string[] = "Hola Jola, czy wierzysz ze jeze tu sa?";
-    char    *substring;
-
-    substring = ft_substr(string, 11, ft_strlen(string) - 11 + 1);
-    printf("%s\n", substring);
-    free(substring);
-    return (0);
-}
-*/
