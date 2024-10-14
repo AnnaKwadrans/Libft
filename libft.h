@@ -6,7 +6,7 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 20:45:45 by akwadran          #+#    #+#             */
-/*   Updated: 2024/10/14 17:23:53 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:54:50 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_isprint(int c); //OK
 
 int		ft_toupper(int c); //OK
 int		ft_tolower(int c); //OK
-int     ft_isspace(int c);
+int		ft_isspace(int c);
 
 size_t	ft_strlen(const char *s); //OK
 void	*ft_memset(void *s, int c, size_t n); //OK

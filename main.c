@@ -6,7 +6,7 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:05:15 by akwadran          #+#    #+#             */
-/*   Updated: 2024/10/08 07:16:14 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/10/14 21:13:50 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -374,7 +374,7 @@ int	main(void)
 
 	// strtrim
 
-	/*
+	
 	char	*trimmed;
 	
 	trimmed = ft_strtrim("  \n\n  \t\n \n\n\n abdcef  \n\n\t\t  \n \n\n\n ", " \n\t");
@@ -392,7 +392,10 @@ int	main(void)
 	trimmed = ft_strtrim("abcdba", "acb");
 	printf("%s\n", trimmed);
 	free(trimmed);
-*/
+
+	trimmed = ft_strtrim("", "");
+	printf("%s\n", trimmed);
+	free(trimmed);
 
 	// itoa
 /*
@@ -404,10 +407,12 @@ int	main(void)
 
 	// split
 
+/*
+	
 	char	**array;
-	int		i;
+	//int		i;
 
-	array = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
+	array = ft_split("Suspendisse", ' ');
 	i = 0;
 	while (array[i] != NULL)
 	{
@@ -415,5 +420,7 @@ int	main(void)
 		i++;
 	}
 	free(array);
+*/
+
 	return (0);
 }

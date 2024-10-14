@@ -6,137 +6,103 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 15:26:22 by akwadran          #+#    #+#             */
-/*   Updated: 2024/10/14 17:24:18 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/10/14 21:21:48 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static int      split_cont(char c, char const *s)
+static int	split_strlen(char c, char const *s)
 {
-        int     cont;
+	int	len;
 
-        cont = 0;
-        while (*s != '\0')
-        {
-                if (*s == c)
-                        cont++;
-                s++;
-        }
-        return (cont);
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	return (len);
 }
 
-static int     split_strlen(char c, char const *s)
+static int	split_count(char const *s, char c)
 {
-        int     len;
+	int	count;
+	int	new_string;
 
-        len = 0;
-        while (s[len] != c)
-                len++;
-        return (len);
+	new_string = 0;
+	count = 0;
+	while (*s != '\0')
+	{
+		if (*s == c)
+			new_string = 0;
+		else if (*s != c && new_string == 0)
+		{
+			new_string = 1;
+			count++;
+		}
+		s++;
+	}
+	return (count);
 }
 
-char    **ft_split(char const *s, char c)
+static void	free_array(char **array)
 {
-        char    **array;
-        int             i;
-        int             j;
+	int	i;
 
-        i = -1;
-        array = ft_calloc((split_cont(c, s) + 1),  sizeof(char *));
-        while (i++ > split_cont(c, s))
-                array[i] = ft_calloc((split_strlen(c, s) + 1), sizeof(char));
-        if (array == NULL)
-                return (NULL);
-        i = 0;
-        while (i < (split_cont(c, s)))
-        {
-                j = 0;
-                while (j < split_strlen(c, s))
-                {
-                        array[i][j] = *s;
-                        j++;
-                        s++;
-                }
-                array[i][j] = '\0';
-                i++;
-        }
-        array[i] = NULL;
-        return (array);
+	i = 0;
+	while (array[i] != NULL)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }
 
-static int     calc_len(int n)
+static char	**init_array(char const *s, int count, char c)
 {
-        int len;
-        
-        len = 0;
-        if (n < 0)
-        {
-                n = -n;
-                len++;
-        }
-        while (n > 9)
-        {
-                n /= 10;
-                len++;
-        }
-        len++;
-        return (len);
+	char	**array;
+	int		i;
+
+	array = (char **)ft_calloc(count + 1, sizeof(char *));
+	if (array == NULL)
+		return (NULL);
+	i = 0;
+	while (i < count)
+	{
+		while (*s != '\0' && *s == c)
+			s++;
+		array[i] = (char *)ft_calloc(split_strlen(c, s) + 1, sizeof(char));
+		if (array[i] == NULL)
+		{
+			free_array(array);
+			return (NULL);
+		}
+		while (*s != '\0' && *s != c)
+			s++;
+		i++;
+	}
+	array[i] = NULL;
+	return (array);
 }
 
-char  *ft_itoa(int n)
+char	**ft_split(char const *s, char c)
 {
-        char    *str_n;
-        int     len;
-        
-        if (n == -2147483648)
-                return (ft_strdup("-2147483648"));
-        len = calc_len(n);
-        str_n = (char *)malloc(sizeof(char) * (len + 1));
-        if (str_n == NULL)
-                return (NULL);
-        if (n < 0)
-        {
-                str_n[0] = '-';
-                n = -n;
-        }
-        str_n[len] = '\0';
-        while (n > 9)
-        {
-                str_n[len - 1] = (n % 10) + '0';
-                n = n / 10;
-                len --;
-        }
-        str_n[--len] = n + '0';
-        return (str_n);
-}
+	int		count;
+	char	**array;
+	int		i;
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-        char    *ptr;
-        unsigned int    i;
-
-        ptr = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
-        if (ptr == NULL)
-                return (NULL);
-        i = 0;
-        while (s[i])
-        {
-                ptr[i] = f(i, s[i]);
-                i++;
-        }
-        ptr[i] = '\0';
-        return (ptr);
-}
-
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
-{
-        unsigned int    i;
-
-        i = 0;
-        while (s[i])
-        {
-                f(i, &s[i]);
-                i++;
-        }
+	count = split_count(s, c);
+	array = init_array(s, count, c);
+	if (array == NULL)
+		return (NULL);
+	i = 0;
+	while (array[i] != NULL)
+	{
+		while (*s != '\0' && *s == c)
+			s++;
+		ft_strlcpy(array[i], s, split_strlen(c, s) + 1);
+		while (*s != '\0' && *s != c)
+			s++;
+		i++;
+	}
+	return (array);
 }

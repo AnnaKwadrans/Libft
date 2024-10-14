@@ -6,7 +6,7 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 22:29:12 by akwadran          #+#    #+#             */
-/*   Updated: 2024/10/12 15:31:12 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/10/14 21:18:20 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 static int	is_set(char c, char const *set)
 {
-	while(*set)
+	while (*set)
 	{
 		if (c == *set)
 			return (1);
@@ -72,13 +72,13 @@ static int	is_set(char c, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	i;
-	int j;
+	int		i;
+	int		j;
 	char	*ptr;
 
 	if (s1 == NULL || set == NULL)
 		return (NULL);
-	if (!s1)
+	if (!(*s1))
 		return (ft_strdup(""));
 	i = 0;
 	j = ft_strlen(s1) - 1;
