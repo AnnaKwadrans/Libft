@@ -6,7 +6,7 @@
 /*   By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 20:45:45 by akwadran          #+#    #+#             */
-/*   Updated: 2024/10/12 15:34:12 by akwadran         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:23:53 by akwadran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*)); //OK
 void	ft_putchar_fd(char c, int fd); //OK
 void	ft_putstr_fd(char *s, int fd); //OK
 void	ft_putendl_fd(char *s, int fd); //OK
-//void	ft_putnbr_fd(int n, int fd); // corregir
+void	ft_putnbr_fd(int n, int fd); //OK
 
 //t_list *ft_lstnew(void *content);
 //void ft_lstadd_front(t_list **lst, t_list *new);
