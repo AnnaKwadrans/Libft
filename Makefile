@@ -6,7 +6,7 @@
 #    By: akwadran <akwadran@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/16 20:46:06 by akwadran          #+#    #+#              #
-#    Updated: 2024/10/14 17:51:08 by akwadran         ###   ########.fr        #
+#    Updated: 2024/10/15 21:38:29 by akwadran         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,17 +20,24 @@ SRC = ft_ctype.c ft_ctype2.c ft_put.c ft_stdlib.c ft_str.c ft_str2.c ft_str3.c f
 
 OBJ = $(SRC:.c=.o)
 
-$(NAME): $(OBJ)
-	$(LIB) $(NAME) $(OBJ)
+SRC_BONUS = ft_list_bonus.c ft_list2_bonus.c
 
-.PHONY: all clean fclean re
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
+
+$(NAME): $(OBJ) $(OBJ_BONUS)
+	$(LIB) $(NAME) $(OBJ) $(OBJ_BONUS)
+
+.PHONY: all clean fclean re bonus
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+bonus: all
+	$(LIB) $(NAME) $(OBJ_BONUS)
