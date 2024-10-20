@@ -21,10 +21,13 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
+	t_list	*aux;
+
 	while (*lst != NULL)
 	{
+		aux = (*lst)->next;
 		ft_lstdelone(*lst, del);
-		*lst = (*lst)->next;
+		*lst = aux;
 	}
 }
 
@@ -32,27 +35,29 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst != NULL)
 	{
-		f(lst);
+		f(lst->content);
 		lst = lst->next;
 	}
 }
-/*
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
-	t_list	*aux;
-	t_list	*new_aux;
+	t_list	*new_node;
 
-	aux = lst;
-	new_aux = new_lst;
-	while (aux != NULL)
+	new_lst = NULL;
+	while (lst != NULL)
 	{
-		new_lst = ft_lstnew(lst->content);
-		(f(new_lst));
-		aux = aux->next;
-		new_lst = new_lst->next;
+		new_node = ft_lstnew(f(lst->content));
+		if (new_node == NULL)
+		{
+			del(new_node->content);
+			ft_lstclear(&new_lst, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_lst, new_node);
+		lst = lst->next;
 	}
-	new_lst->next = NULL;
-	return (new_aux);
+	new_node = NULL;
+	return (new_lst);
 }
-*/

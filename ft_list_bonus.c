@@ -59,10 +59,13 @@ t_list	*ft_lstlast(t_list *lst)
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*aux;
+	t_list	*last;
 
-	aux = ft_lstlast(*lst);
-	if (aux == NULL)
+	if (*lst == NULL)
 		*lst = new;
-	aux->next = new;
+	else
+	{
+		last = ft_lstlast(*lst);
+		last->next = new;
+	}
 }
